@@ -18,6 +18,9 @@ Vue.prototype.bus = new Vue();
  * this.bus.$on来进行跨组件通信
  */
 
+// 挂载dataV
+import dataV from '@jiaminghi/data-view';
+Vue.use(dataV);
 new Vue({
   router,
   store,

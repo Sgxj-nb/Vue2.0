@@ -57,6 +57,8 @@ export default {
     },
     // 跳转
     addinfo() {
+      let addinfo = [{ name: '我是你爸爸' }];
+      this.bus.$emit('addinfos', addinfo);
       this.$router.push('/components/page/ds');
     },
 
@@ -92,6 +94,14 @@ export default {
             this.ifno.push(res.data.data[i].cate_name);
           }
         }
+      });
+
+      /**
+       * vuex查询
+       * 获取的是在vuex种异步请求的参数在返回到对应的每一个html模板界面
+       * **/
+      this.$store.dispatch('infoaaa').then((res) => {
+        console.log('>>>>>>>>>>>>>>>', res.data);
       });
     },
   },

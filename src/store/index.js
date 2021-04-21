@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-
+import axios from 'axios';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -22,6 +22,22 @@ export default new Vuex.Store({
       localStorage.removeItem('token');
     },
   },
-  actions: {},
+  actions: {
+    // 查询
+    infoaaa() {
+      return new Promise((resolve) => {
+        axios({
+          url: 'http://api.liwocode.nqphp.com/api/v1/manage/productCate/list',
+          method: 'post',
+          headers: {
+            Authorization: localStorage.getItem('token'),
+          },
+          data: {},
+        }).then(function (res) {
+          resolve(res);
+        });
+      });
+    },
+  },
   modules: {},
 });
