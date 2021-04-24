@@ -6,8 +6,14 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     token: '',
+    currentPageName: '',
   },
   mutations: {
+    // 设置当前界面的名称
+    setPageName(state, name) {
+      state.currentPageName = name;
+    },
+
     // 记住
     tokeninfo(state, token) {
       state.token = token;

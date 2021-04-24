@@ -25,7 +25,10 @@ export default {
   name: 'App',
   data() {
     return {
-      queryinfo: {},
+      queryinfo: {
+        user_name: 'xxi',
+        user_password: '123456',
+      },
     };
   },
   methods: {
