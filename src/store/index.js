@@ -33,7 +33,7 @@ export default new Vuex.Store({
     infoaaa() {
       return new Promise((resolve) => {
         axios({
-          url: 'http://api.liwocode.nqphp.com/api/v1/manage/productCate/list',
+          url: 'xxxxxxxxx',
           method: 'post',
           headers: {
             Authorization: localStorage.getItem('token'),
