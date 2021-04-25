@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import store from '../store/index';
+import NProgress from 'nprogress';
+
 Vue.use(VueRouter);
 // 界面刷新
 if (localStorage.getItem('token')) {
@@ -54,6 +56,7 @@ const router = new VueRouter({
 // 路由拦截
 router.beforeEach((to, from, next) => {
   document.title = `${to.meta.title} | 模板`; // 头部动态标题
+  NProgress.start();
   if (to.meta.requireAuth) {
     console.log('qqqqqqq');
     if (store.state.token) {
@@ -70,5 +73,9 @@ router.beforeEach((to, from, next) => {
   } else {
     next();
   }
+});
+
+router.afterEach(() => {
+  NProgress.done();
 });
 export default router;

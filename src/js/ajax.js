@@ -5,8 +5,8 @@ import { Loading, Message } from 'element-ui';
 import store from '../store/index';
 // 请求地址
 let ajax = {
-  serverBaseUrl: 'xxxxxx',
-  infoshow: 'xxxxx',
+  serverBaseUrl: 'xxxx',
+  infoshow: 'xxxxxxxx',
 };
 
 /**

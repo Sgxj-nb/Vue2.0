@@ -33,7 +33,7 @@ export default new Vuex.Store({
     infoaaa() {
       return new Promise((resolve) => {
         axios({
-          url: 'xxxxxxxxx',
+          url: 'xxxx',
           method: 'post',
           headers: {
             Authorization: localStorage.getItem('token'),
