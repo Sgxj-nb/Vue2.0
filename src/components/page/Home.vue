@@ -1,5 +1,9 @@
 <template>
   <div>
+    <!-- 搜索框 -->
+    <div>
+      <input @click="add" type="text" />
+    </div>
     <div> 文件上传 </div>
     <!-- 点击事件 -->
     <el-button @click="openFile" type="info">选择文件</el-button>
@@ -17,6 +21,68 @@
     </div>
     <div v-for="d in ifno" :key="d.cate_name">
       {{ d }}
+    </div>
+
+    <!-- 滑动到一定程度就固定 -->
+    <div>
+      <div id="testNavBar">
+        <div :class="{ fixedNavbar: isfixTab }">
+          <div>我呗呗固定了</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
+      <div>sdasdadas</div>
     </div>
   </div>
 </template>
@@ -38,6 +104,12 @@ export default {
       info: '',
       list: [],
       ifno: [],
+      // 滑动到一定程度就固定
+      isfixTab: false,
+      isnavshow: false,
+      cateList: [],
+      cateInfo: [],
+      config_list: {},
     };
   },
   computed: {
@@ -45,7 +117,28 @@ export default {
       return this.file && tools.isImage(this.file);
     },
   },
+  // 离开当前组件前一定要清除监听，否则进入其他路由会报错(其实最好还是不写)
+  // beforeRouteLeave(to, from, next) {
+  //   console.log(to, from, next);
+  //   window.removeEventListener('scroll', this.handleTabFix, true);
+  //   next();
+  // },
+  mounted() {
+    // 界面滑动监听
+    window.addEventListener('scroll', this.handleTabFix, true);
+  },
   methods: {
+    /**
+     * 滚动到一定程度做到监听
+     * 先分别获取testNavBar的元素距离顶部的距离和页面滚动的距离
+     * 比较他们的大小来确定是否添加 fixedNavbar 样式
+     * */
+    handleTabFix() {
+      var scrollTop = window.pageXOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      var offsetTop = document.querySelector('#testNavBar').offsetTop;
+      scrollTop > offsetTop ? (this.isfixTab = true) : (this.isfixTab = false);
+    },
+
     // 图片删除
     outinfo() {
       let app = this;
@@ -104,6 +197,12 @@ export default {
         console.log('>>>>>>>>>>>>>>>', res.data);
       });
     },
+
+    // input框的点击事件
+    add() {
+       console.log(111);
+       
+    },
   },
   created() {
     this.query();
@@ -121,5 +220,14 @@ export default {
   bottom: 0;
   left: 0; */
   background-color: rgba(0, 0, 0, 0.5);
+}
+.fixedNavbar {
+  background-color: #f3f3f3;
+  position: fixed;
+  width: 100%;
+  z-index: 2032;
+  top: 0;
+  left: 0;
+  padding-bottom: 10px;
 }
 </style>
