@@ -2,7 +2,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import store from '../store/index';
 import NProgress from 'nprogress';
+import Carousel3d from 'vue-carousel-3d';
 
+Vue.use(Carousel3d);
 Vue.use(VueRouter);
 // 界面刷新
 if (localStorage.getItem('token')) {
@@ -46,6 +48,15 @@ const routes = [
       title: '我是第二个界面',
     },
     component: () => import('../components/page/ds.vue'), // 路由分片打包 按需加载
+  },
+  {
+    path: '/components/3D/image',
+    name: '3D图片',
+    meta: {
+      requireAuth: true,
+      title: '3D图片',
+    },
+    component: () => import('../components/3D/image.vue'), // 路由分片打包 按需加载
   },
 ];
 

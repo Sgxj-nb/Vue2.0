@@ -17,6 +17,8 @@
   
 - 新增界面滚动到一定程度就固定元素
 
+- (`新增3D图片滑动`)['https://wlada.github.io/vue-carousel-3d/examples/']
+
 # 目录结构
 
 

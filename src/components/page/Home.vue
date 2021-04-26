@@ -17,7 +17,8 @@
       </div>
     </div>
     <div>
-      <el-button type="info" @click="addinfo">跳转</el-button>
+      <el-button type="info" @click="addinfo">跳转可视化</el-button>
+      <el-button type="info" @click="showinfo">跳转3D图片</el-button>
     </div>
     <div v-for="d in ifno" :key="d.cate_name">
       {{ d }}
@@ -118,11 +119,11 @@ export default {
     },
   },
   // 离开当前组件前一定要清除监听，否则进入其他路由会报错(其实最好还是不写)
-  // beforeRouteLeave(to, from, next) {
-  //   console.log(to, from, next);
-  //   window.removeEventListener('scroll', this.handleTabFix, true);
-  //   next();
-  // },
+  beforeRouteLeave(to, from, next) {
+    console.log(to, from, next);
+    window.removeEventListener('scroll', this.handleTabFix, true);
+    next();
+  },
   mounted() {
     // 界面滑动监听
     window.addEventListener('scroll', this.handleTabFix, true);
@@ -200,8 +201,12 @@ export default {
 
     // input框的点击事件
     add() {
-       console.log(111);
-       
+      console.log(111);
+    },
+
+    // 跳转3D
+    showinfo() {
+      this.$router.push('/components/3D/image');
     },
   },
   created() {
