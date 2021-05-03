@@ -5,6 +5,12 @@ import store from './store';
 import './ElementUI/elementul.js';
 Vue.config.productionTip = false;
 
+// 全局虚拟滚动
+
+import vuescroll from 'vuescroll';
+import 'vuescroll/dist/vuescroll.css';
+Vue.use(vuescroll);
+
 // 挂载全局ajax请求
 import ajax from './js/ajax';
 Vue.use(ajax);

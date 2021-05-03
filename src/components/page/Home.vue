@@ -1,90 +1,93 @@
 <template>
   <div>
-    <!-- 搜索框 -->
-    <div>
-      <input @click="add" type="text" />
-    </div>
-    <div> 文件上传 </div>
-    <!-- 点击事件 -->
-    <el-button @click="openFile" type="info">选择文件</el-button>
-    <el-button @click="upload" type="success">上传文件</el-button>
-    <!-- <span v-if="file">{{ file.name }}</span> -->
-    <!-- 利用隐藏表单来隐藏图片信息 这里根据自己的需求来是否展示自身图片名称 -->
-    <input v-if="file" type="hidden" v-model="file.name" name="" id="" />
-    <div class="info">
-      <div id="box">
-        <img v-if="isImage" @click="outinfo" :src="imgData" alt="" />
+    <vue-scroll :ops="ops">
+      <!-- 搜索框 -->
+      <div>
+        <input @click="add" type="text" />
       </div>
-    </div>
-    <div>
-      <el-button type="info" @click="addinfo">跳转可视化</el-button>
-      <el-button type="info" @click="showinfo">跳转3D图片</el-button>
-    </div>
-    <div v-for="d in ifno" :key="d.cate_name">
-      {{ d }}
-    </div>
-
-    <!-- 滑动到一定程度就固定 -->
-    <div>
-      <div id="testNavBar">
-        <div :class="{ fixedNavbar: isfixTab }">
-          <div>我呗呗固定了</div>
+      <div> 文件上传 </div>
+      <!-- 点击事件 -->
+      <el-button @click="openFile" type="info">选择文件</el-button>
+      <el-button @click="upload" type="success">上传文件</el-button>
+      <!-- <span v-if="file">{{ file.name }}</span> -->
+      <!-- 利用隐藏表单来隐藏图片信息 这里根据自己的需求来是否展示自身图片名称 -->
+      <input v-if="file" type="hidden" v-model="file.name" name="" id="" />
+      <div class="info">
+        <div id="box">
+          <img v-if="isImage" @click="outinfo" :src="imgData" alt="" />
         </div>
       </div>
-    </div>
-    <div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-      <div>sdasdadas</div>
-    </div>
+      <div>
+        <el-button type="info" @click="addinfo">跳转可视化</el-button>
+        <el-button type="info" @click="showinfo">跳转3D图片</el-button>
+        <el-button type="primary" @click="infoaddpassword">三元传值</el-button>
+      </div>
+      <div v-for="d in ifno" :key="d.cate_name">
+        {{ d }}
+      </div>
+
+      <!-- 滑动到一定程度就固定 -->
+      <div>
+        <div id="testNavBar">
+          <div :class="{ fixedNavbar: isfixTab }">
+            <div>我呗呗固定了</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+        <div>sdasdadas</div>
+      </div>
+    </vue-scroll>
   </div>
 </template>
 <script>
@@ -96,6 +99,59 @@ export default {
   // 测试生命周期
   data() {
     return {
+      ops: {
+        vuescroll: {
+          mode: 'slide',
+          sizeStrategy: 'percent',
+          detectResize: true,
+          /** 锁定一种滚动方向， 锁定的方向为水平或者垂直方向上滑动距离较大的那个方向 */
+          // locking: false,
+        },
+        scrollPanel: {
+          initialScrollY: false,
+          initialScrollX: false,
+          scrollingX: true,
+          scrollingY: true,
+          speed: 300,
+          easing: undefined,
+          padding: false,
+          verticalNativeBarPos: 'right',
+        },
+        rail: {
+          background: '#ee2746',
+          opacity: 0,
+          border: 'none',
+          size: '6px',
+          specifyBorderRadius: false,
+          gutterOfEnds: null,
+          gutterOfSide: '2px',
+          keepShow: false,
+        },
+        bar: {
+          showDelay: 500,
+          /** Specify bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
+          specifyBorderRadius: false,
+          /** 是否只在滚动的时候现实滚动条 */
+          onlyShowBarOnScroll: true,
+          /** 是否保持显示 */
+          keepShow: false,
+          /** 滚动条颜色, default -> #00a650 */
+          background: 'rgb(3, 185, 118)',
+          /** 滚动条透明度, default -> 1  */
+          opacity: 1,
+          /** 滚动条的尺寸，默认6px **/
+          size: '6px',
+          /** Styles when you hover scrollbar, it will merge into the current style */
+          hoverStyle: false,
+        },
+        scrollButton: {
+          enable: false,
+          background: 'rgb(3, 185, 118)',
+          opacity: 1,
+          step: 180,
+          mousedownStep: 30,
+        },
+      },
       title: '测试文件上传',
       // 选中的文件
       file: null,
@@ -111,6 +167,8 @@ export default {
       cateList: [],
       cateInfo: [],
       config_list: {},
+      ifnoaaadwaw: '1',
+      infoaw: '888',
     };
   },
   computed: {
@@ -207,6 +265,12 @@ export default {
     // 跳转3D
     showinfo() {
       this.$router.push('/components/3D/image');
+    },
+
+    // 双层三木运算嵌套
+    infoaddpassword() {
+      let aaww = this.ifnoaaadwaw ? (this.infoaw ? '第二个有值' : '第二个没值') : '第一个没传值请等待';
+      console.log(aaww);
     },
   },
   created() {

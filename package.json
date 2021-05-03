@@ -13,7 +13,6 @@
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "element-ui": "^2.15.1",
-    "js-cookie": "^2.2.1",
     "js-md5": "^0.7.3",
     "nprogress": "^0.2.0",
     "qs": "^6.5.2",
@@ -21,6 +20,7 @@
     "vue": "^2.6.11",
     "vue-carousel-3d": "^1.0.1",
     "vue-router": "^3.2.0",
+    "vuescroll": "^4.17.3",
     "vuex": "^3.4.0"
   },
   "devDependencies": {

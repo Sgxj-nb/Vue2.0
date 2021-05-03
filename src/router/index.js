@@ -3,7 +3,6 @@ import VueRouter from 'vue-router';
 import store from '../store/index';
 import NProgress from 'nprogress';
 import Carousel3d from 'vue-carousel-3d';
-
 Vue.use(Carousel3d);
 Vue.use(VueRouter);
 // 界面刷新
@@ -57,6 +56,15 @@ const routes = [
       title: '3D图片',
     },
     component: () => import('../components/3D/image.vue'), // 路由分片打包 按需加载
+  },
+  {
+    path: '/components/Tailwind/home',
+    name: 'css',
+    meta: {
+      requireAuth: false,
+      title: 'css',
+    },
+    component: () => import('../components/Tailwind/Home.vue'), // 路由分片打包 按需加载
   },
 ];
 
