@@ -5,8 +5,8 @@ import { Loading, Message } from 'element-ui';
 import store from '../store/index';
 // 请求地址
 let ajax = {
-  serverBaseUrl: 'http://api.liwocode.nqphp.com/',
-  infoshow: 'http://api.liwocode.nqphp.com',
+  serverBaseUrl: 'xxxx',
+  infoshow: 'xxxx',
 };
 
 /**
